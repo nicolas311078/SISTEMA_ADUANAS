@@ -1,4 +1,6 @@
 body{
+    background-image: radial-gradient(circle at 50% -20.71%, #a6ffa7 0, #90ffab 12.5%, #76ffb0 25%, #54ffb5 5 37.5%,
+    #08ffbb 50%, #00fbc2 62.5%, #00f8ca 75%, #00f4d3 87.5%, #00f1dc 100%);
     background-color: black;
     display: flex;
     justify-content: center;
@@ -23,5 +25,18 @@ form{
     border-radius:20px;
     color:black; 
 }
- 
+h1{
+    display: block;
+    border: 2px solid black;
+    width: 95%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+label{
+    color: black;
+    font-size:18px;
+    padding: 10px;
+    font-weight: 300px;
+}
  
