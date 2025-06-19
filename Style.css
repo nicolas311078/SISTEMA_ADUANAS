@@ -1,4 +1,27 @@
 body{
     background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh ;
+    flex-direction: column;
  }
+ *{
+    font-family: 'Lato', sans-serif;
+    font-family: 'Open sans', sans-serif;
+    font-family: 'PT sans', sans-serif;
+    box-sizing: border-box;
+ }
+ 
+ 
+form{
+    width: 500px;
+    border: 2px solid black;
+    padding: 5rem;
+    background-color: whitesmoke;
+    border:none;
+    border-radius:20px;
+    color:black; 
+}
+ 
  

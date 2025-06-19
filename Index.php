@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+ <!DOCTYPE HTML>
 <HTML LANG= "en">
     <head>
         <meta charset ="UTF-8">
@@ -10,8 +10,20 @@
         <tittle> Inicio de sesion </tittle>
 </head>  
 ><body>
-    <form action="" >
-        <label> usuario1 </label>
+    <form action="IniciarSesion.php" method="POST" >
+
+        <i class="fa-solid fa-user"></i>
+        <label> Usuario </label>
+        <input type="text" name=" Usuario" placeholder="Nombre de usuario">
+        
+        <i class="fa-solid fa-unlock"></i>
+        <label> Usuario </label>
+        <input type="text" name="Clave" placeholder="Clave">
+
+        <button type="submit"> Iniciar sesion</button>
+        <a href="CrearCuenta.php"?>Crear Cuenta</a>
+    
+    </form>
 </body>
 
 
