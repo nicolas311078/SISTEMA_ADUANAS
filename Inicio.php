@@ -10,7 +10,7 @@
     </head>
 <body>
     <CENTER> 
-        <h1>HOME</h1> 
+        <h1>Aduanas de Chile</h1> 
     </CENTER>
     <a href="CerrarSesion.php" class= "btn btn-danger">Cerrar Sesion</a>
 </body>

@@ -33,7 +33,7 @@ if (isset(  $_POST['Usuario'] ) && isset($_POST['Clave'])){
         }
     }
     }else{
-            header("Location: Index.php");
+            header("Location: Inicio.php");
             exit();
         }
 }
