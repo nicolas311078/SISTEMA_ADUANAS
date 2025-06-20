@@ -2,11 +2,11 @@
 <html lang ="es">
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name ="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3-a/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel= "stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/UG6swU2Im1vVX05Vk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/UG6swU2Im1vVX05Vk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <title>Tramites y Permisos De Menores</title>
       
        <style>
@@ -44,7 +44,7 @@
                 margin-bottom: 10px;
             }
             /* Sirve para que cuando pases el mouse por encima del item de la lista, cambie de color */
-            .list-group-item.hover:hover {
+            .list-group-item:hover {
                 background-color: #333;
                 color: whitesmoke;
             }
