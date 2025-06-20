@@ -15,7 +15,7 @@ if (isset(  $_POST['Usuario'] ) && isset($_POST['Clave'])){
         header("Location: Index.php?error=El Usuario Es Requerido");
         exit();
     }elseif(empty($Clave)){
-        //$Clave = md5($clave);
+        $Clave = md5($clave);
         $Sql = "SELECT * FROM usuarios WHERE Usuario = '$Usuario' and Clave ='$Clave'";
         $result = mysqli_query($conexion, $Sql);
 

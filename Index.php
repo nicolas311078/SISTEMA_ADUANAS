@@ -1,5 +1,5 @@
  <!DOCTYPE HTML>
-<HTML LANG= "en">
+    <HTML LANG= "en">
     <head>
     <meta charset ="UTF-8">
     <meta http-equiuv="X-UA.Compatible" content ="IE=edge">
@@ -27,7 +27,7 @@
             }
         ?>
         <i class="fa-solid fa-user"></i>
-        <label> Usuario </label>
+        <label>Usuario </label>
         <input type="text" name=" Usuario" placeholder="Nombre de usuario">
         
         <i class="fa-solid fa-unlock"></i>
@@ -39,9 +39,6 @@
     
     </form>
 </body>
-
-
-
 </head>
 
 
