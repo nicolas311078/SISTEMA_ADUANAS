@@ -28,7 +28,7 @@ if (isset(  $_POST['Usuario'] ) && isset($_POST['Clave'])){
                 header("Location: Inicio.php");
                 exit(); 
         }else{
-            header("Location: Index.php?error=EL usuario o la clave son incorrectas");
+            header("Location: Index.php?error= EL usuario o la clave son incorrectas");
             exit(); 
         }
     }
