@@ -1,27 +1,58 @@
-<!DOCTYPE htm>
-<html lang="en">
-<head>
-    <meta charset ="UTF-8">
-    <meta http-equiuv="X-UA.Compatible" content ="IE=edge">
-    <meta name=viewport content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/basic.css" rel ="stylesheet" integrity ="sha384-1BmE4kWBq78iYhFld6x8j6b6d">
-    <link rel= "stylesheet" href="Style.css">
-    <tittle> Registrarse </tittle>
+<?php
+session_start();
+include('Conexion.php');
 
-</head>
-<body>
-    <div class="contenedor">
-        <h1> <ins>Registrarse</ins></h1>
-        <br>
-        <form action="">
-            <label for="">
-            <i class="fa-solid fa-user" ></i>
-                Usuario
-            </label>
-            <input type ="text" placeholder="Ingrese usuario" name="Usuario">
-            <label for=""></label>
+if (isset($_POST['registrar'])) {
+    function validate($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
 
-            </label>
-        </form>
-    </div>
-</body>
+    // Validar datos
+    $Usuario = validate($_POST['Usuario']);
+    $Clave = validate($_POST['Clave']);
+    $NombreCompleto = validate($_POST['NombreCompleto']);
+
+    // Validar campos vacíos
+    if (empty($Usuario)) {
+        header("Location: Registro.php?error=El Usuario es requerido");
+        exit();
+    } elseif (empty($Clave)) {
+        header("Location: Registro.php?error=La Contraseña es requerida");
+        exit();
+    } elseif (empty($NombreCompleto)) {
+        header("Location: Registro.php?error=El Nombre Completo es requerido");
+        exit();
+    }
+
+    // Verificar si el usuario ya existe
+    $sql_check = "SELECT * FROM usuarios WHERE Usuario = '$Usuario'";
+    $result_check = mysqli_query($conexion, $sql_check);
+
+    if (mysqli_num_rows($result_check) > 0) {
+        header("Location: Registro.php?error=El usuario ya está registrado");
+        exit();
+    }
+
+    // Encriptar contraseña (MD5 para compatibilidad con tu sistema actual)
+    $Clave_encriptada = md5($Clave);
+
+    // Insertar usuario
+    $sql_insert = "INSERT INTO usuarios (Usuario, Clave, NombreCompleto) 
+                   VALUES ('$Usuario', '$Clave_encriptada', '$NombreCompleto')";
+    $result_insert = mysqli_query($conexion, $sql_insert);
+
+    if ($result_insert) {
+        header("Location: Index.php?success=Usuario registrado exitosamente");
+        exit();
+    } else {
+        header("Location: Registro.php?error=Error al registrar: " . mysqli_error($conexion));
+        exit();
+    }
+} else {
+    header("Location: Registro.php");
+    exit();
+}
+?>

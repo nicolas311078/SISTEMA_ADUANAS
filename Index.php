@@ -9,34 +9,39 @@
     <link rel="stylesheet" href="Style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <tittle>Inicio de sesion</tittle>
 </head>  
 <body>
-    <form action="IniciarSesion.php" method="POST" >
-        <h1>INICIAR SESION</h1>
+    <form action="IniciarSesion.php" method="POST">
+        <h1>INICIAR SESIÓN</h1>
         <hr>
-        <?php
-            if(isset($_GET['error'])){
-             ?>
-            <p class="Error">
-                <?php
-                echo $_GET["error"]
-                ?>
-            </p> 
-        <?php  
-            }
-        ?>
-        <i class="fa-solid fa-user"></i>
-        <label>Usuario </label>
-        <input type="text" name="Usuario" placeholder="Nombre de usuario">
         
-        <i class="fa-solid fa-unlock"></i>
-        <label> Clave </label>
-        <input type="password" name="Clave" placeholder="Clave">
+        <!-- Mostrar errores -->
+        <?php if(isset($_GET['error'])): ?>
+            <p class="error">
+                <?= htmlspecialchars($_GET['error']) ?>
+            </p> 
+        <?php endif; ?>
+        
+        <!-- Campo Usuario -->
+        <div class="input-group">
+            <i class="fa-solid fa-user"></i>
+            <label>Usuario</label>
+            <input type="text" name="Usuario" placeholder="Nombre de usuario" required>
+        </div>
+        
+        <!-- Campo Clave -->
+        <div class="input-group">
+            <i class="fa-solid fa-unlock"></i>
+            <label>Clave</label>
+            <input type="password" name="Clave" placeholder="Clave" required>
+        </div>
         <hr>
-        <button type="submit"> Iniciar sesion </button>
-        <a href="CrearCuenta.php"?>Crear Cuenta</a>
-    
+        
+        <!-- Contenedor de botones -->
+        <div class="button-group">
+            <button type="submit">Iniciar sesión</button>
+            <a href="Registro_Usuario.php" class="btn-registro">Registrarse</a>
+        </div>
     </form>
 </body>
 </head>
