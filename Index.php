@@ -226,8 +226,8 @@
         
         <!-- Campo Usuario -->
         <div class="input-group">
-            <label>Usuario</label>
-            <input type="text" name="Usuario" placeholder="Nombre de usuario" required>
+            <label>Correo</label>
+            <input type="text" name="Correo" placeholder="Correo" required>
             <i class="fa-solid fa-user"></i>
         </div>
         
@@ -244,6 +244,7 @@
             <button type="submit">Iniciar sesión</button>
             <!-- Versión corregida -->
 <a href="registro.php" class="btn-registro">Registrarse</a>
+
         </div>
     </form>
 </body>

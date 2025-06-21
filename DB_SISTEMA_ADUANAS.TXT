@@ -1,7 +1,28 @@
+-- Eliminar la tabla si ya existe
+DROP TABLE IF EXISTS usuarios;
 
+-- Crear la tabla usuarios
 CREATE TABLE usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    Usuario VARCHAR(50) NOT NULL,
+    Rut VARCHAR(12) NOT NULL,
+    Nombres VARCHAR(100) NOT NULL,
+    Apellidos VARCHAR(100) NOT NULL,
+    Correo VARCHAR(100) NOT NULL,
     Clave VARCHAR(255) NOT NULL,
-    NombreCompleto VARCHAR(255) NOT NULL
-);
+    Telefono VARCHAR(20) NOT NULL,
+    FechaRegistro DATETIME NOT NULL,
+    Activo TINYINT(1) DEFAULT 1,
+    IntentosFallidos TINYINT(1) DEFAULT 0,
+    UltimoAcceso DATETIME NULL,
+    TokenRecuperacion VARCHAR(255) NULL,
+    TokenExpiracion DATETIME NULL,
+    
+    -- Índices para mejorar el rendimiento
+    UNIQUE INDEX idx_rut (Rut),
+    UNIQUE INDEX idx_correo (Correo),
+    INDEX idx_apellidos (Apellidos),
+    INDEX idx_fecha_registro (FechaRegistro)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+ESTA ES LA NUEVA BASE DE DATOS CHICOS POR FAVOR SI TIENEN LA OTRA CREADA POR FAVOR PONER EL CODIGO COMPLETO.
