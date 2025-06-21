@@ -4,7 +4,7 @@ session_start();
 
 // Configuración de la base de datos
 $host = 'localhost';
-$dbname = 'mascotas_db';
+$dbname = 'db_sistema_aduanas';
 $username = 'root';
 $password = '';
 
