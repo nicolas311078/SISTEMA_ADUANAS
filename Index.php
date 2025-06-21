@@ -242,7 +242,8 @@
         <!-- Contenedor de botones -->
         <div class="button-group">
             <button type="submit">Iniciar sesión</button>
-            <button type="submit">Registrarse</button>
+            <!-- Versión corregida -->
+<a href="registro.php" class="btn-registro">Registrarse</a>
         </div>
     </form>
 </body>

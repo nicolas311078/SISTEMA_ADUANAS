@@ -181,7 +181,7 @@
             <div class="form-group">
                 <label for="Telefono">Número de Teléfono:</label>
                 <input type="tel" id="Telefono" name="Telefono" placeholder="+56 9 1234 5678" required>
-            </div>
+                </div>
 
             <button type="submit" name="registrar">Registrarse</button>
         </form>
