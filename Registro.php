@@ -30,6 +30,56 @@
             border: 2px solid #2a5298;
         }
 
+        /* Logo centrado (opción actual) */
+        .logo-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        /* Logo en esquina superior - descomenta para usar */
+        
+        .logo-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 10;
+        }
+
+        .logo {
+            max-width: 80px;
+            height: auto;
+            margin-bottom: 0;
+        }
+        */
+
+        /* Logo en esquina superior del formulario - alternativa */
+        
+        .container {
+            position: relative;
+        }
+
+        .logo-container {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: white;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            max-width: 60px;
+            height: auto;
+            margin-bottom: 0;
+        }
+
         h2 {
             text-align: center;
             margin-bottom: 30px;
@@ -128,7 +178,7 @@
             border-left: 4px solid #2e7d32;
         }
 
-        @media (max-width: 480px) {
+            @media (max-width: 480px) {
             .container {
                 padding: 30px 20px;
                 margin: 10px;
@@ -137,11 +187,30 @@
             h2 {
                 font-size: 24px;
             }
+
+            /* Logo más pequeño en móvil */
+            .logo-container {
+                top: 10px;
+                left: 10px;
+                padding: 8px;
+            }
+
+            .logo {
+                max-width: 80px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="logo-container">
+            <!-- Logo oficial del Servicio Nacional de Aduanas -->
+            <img src="https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=100068943858647" 
+                 alt="Servicio Nacional de Aduanas - Chile" 
+                 class="logo"
+                 onerror="this.style.display='none'">
+        </div>
+
         <h2>Registro de Usuario</h2>
 
         <?php if (isset($_GET['error'])): ?>
@@ -181,7 +250,7 @@
             <div class="form-group">
                 <label for="Telefono">Número de Teléfono:</label>
                 <input type="tel" id="Telefono" name="Telefono" placeholder="+56 9 1234 5678" required>
-                </div>
+            </div>
 
             <button type="submit" name="registrar">Registrarse</button>
         </form>
