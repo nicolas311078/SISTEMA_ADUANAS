@@ -301,7 +301,7 @@
                 <div class="service-description">Gestiona permisos menores y documentación aduanera</div>
             </a>
 
-            <a href="declararMascotas.php" class="service-card">
+            <a href="DeclararMascotas.php" class="service-card">
                 <span class="service-icon">🐕</span>
                 <div class="service-title">Declarar Mascotas</div>
                 <div class="service-description">Registra el ingreso o salida de mascotas del país</div>
