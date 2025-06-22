@@ -250,7 +250,7 @@
             <button type="submit" name="declarar">Declarar Mascota</button>
         </form>
 
-        <p class="back-link">¿Ya tienes cuenta? <a href="Index.php">Inicia Sesión</a></p>
+        <p class="back-link"> <a href="Inicio.php">VOLVER AL INICIO</a></p>
     </div>
 </body>
 </html>
