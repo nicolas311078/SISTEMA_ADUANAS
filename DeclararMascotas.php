@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Declarar Mascotas</title>
+    <title>Declaración de Mascotas</title>
     <style>
         * {
             margin: 0;
@@ -46,6 +46,18 @@
             border: 2px solid #2a5298;
         }
 
+        /* Logo centrado */
+        .logo-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
         h2 {
             text-align: center;
             margin-bottom: 30px;
@@ -68,7 +80,6 @@
 
         input[type="text"],
         input[type="number"],
-        input[type="date"],
         select {
             width: 100%;
             padding: 12px 15px;
@@ -81,7 +92,6 @@
 
         input[type="text"]:focus,
         input[type="number"]:focus,
-        input[type="date"]:focus,
         select:focus {
             outline: none;
             border-color: #2a5298;
@@ -130,6 +140,24 @@
             color: #1e3c72;
         }
 
+        .error {
+            background-color: #ffebee;
+            color: #c62828;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border-left: 4px solid #c62828;
+        }
+
+        .success {
+            background-color: #e8f5e8;
+            color: #2e7d32;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2e7d32;
+        }
+
         @media (max-width: 480px) {
             .container {
                 padding: 30px 20px;
@@ -140,6 +168,7 @@
                 font-size: 24px;
             }
 
+            /* Logo más pequeño en móvil */
             .logo-top-left img {
                 max-width: 60px;
             }
@@ -149,26 +178,79 @@
 <body>
     <!-- Logo en esquina superior izquierda -->
     <div class="logo-top-left">
-        <img src="https://via.placeholder.com/100x100/2a5298/ffffff?text=LOGO" 
+        <img src="https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=100068943858647" 
              alt="Logo" 
              onerror="this.style.display='none'">
     </div>
 
     <div class="container">
-        <h2>Declarar Mascotas</h2>
+        <div class="logo-container">
+            <!-- Logo oficial del Servicio Nacional de Aduanas -->
+            <img src="https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=100068943858647" 
+                 alt="Servicio Nacional de Aduanas - Chile" 
+                 class="logo"
+                 onerror="this.style.display='none'">
+        </div>
 
-        <form action="declarar_mascotas.php" method="POST">
+        <h2>Declaración de Mascotas</h2>
+
+        <form action="Declaracion_Mascotas.php" method="POST">
             <div class="form-group">
-                <label for="nombre_mascota">Nombre de la Mascota:</label>
-                <input type="text" id="nombre_mascota" name="nombre_mascota" required>
+                <label for="NombreMascota">Nombre de la Mascota:</label>
+                <input type="text" id="NombreMascota" name="NombreMascota" required>
             </div>
 
             <div class="form-group">
-                <label for="tipo_animal">Tipo de Animal:</label>
-                <select id="tipo_animal" name="tipo_animal" required>
-                    <option value="">Seleccione el tipo de animal</option>
-                    <option value="perro">Perro</option>
-                    <option value="gato">Gato</option>
-                    <option value="ave">Ave</option>
-                    <option value="conejo">Conejo</option>
-                    
+                <label for="Especie">Especie:</label>
+                <select id="Especie" name="Especie" required>
+                    <option value="">Seleccione una especie</option>
+                    <option value="Perro">Perro</option>
+                    <option value="Gato">Gato</option>
+                    <option value="Ave">Ave</option>
+                    <option value="Conejo">Conejo</option>
+                    <option value="Hamster">Hámster</option>
+                    <option value="Otro">Otro</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Raza">Raza:</label>
+                <input type="text" id="Raza" name="Raza" placeholder="Ej: Labrador, Siamés, etc." required>
+            </div>
+
+            <div class="form-group">
+                <label for="Sexo">Sexo:</label>
+                <select id="Sexo" name="Sexo" required>
+                    <option value="">Seleccione</option>
+                    <option value="Macho">Macho</option>
+                    <option value="Hembra">Hembra</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Edad">Edad (años):</label>
+                <input type="number" id="Edad" name="Edad" min="0" max="30" step="0.1" placeholder="Ej: 3.5" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Peso">Peso (kg):</label>
+                <input type="number" id="Peso" name="Peso" min="0.1" max="100" step="0.1" placeholder="Ej: 15.5" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Color">Color/Descripción:</label>
+                <input type="text" id="Color" name="Color" placeholder="Ej: Café con blanco" required>
+            </div>
+
+            <div class="form-group">
+                <label for="NumeroMicrochip">Número de Microchip:</label>
+                <input type="text" id="NumeroMicrochip" name="NumeroMicrochip" placeholder="Ej: 982000123456789">
+            </div>
+
+            <button type="submit" name="declarar">Declarar Mascota</button>
+        </form>
+
+        <p class="back-link">¿Ya tienes cuenta? <a href="Index.php">Inicia Sesión</a></p>
+    </div>
+</body>
+</html>
