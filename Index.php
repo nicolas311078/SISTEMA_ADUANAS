@@ -226,8 +226,8 @@
         
         <!-- Campo Usuario -->
         <div class="input-group">
-            <label>Correo</label>
-            <input type="text" name="Correo" placeholder="Correo" required>
+            <label>Correo electrónico</label>
+            <input type="text" name="Correo" placeholder="Ingrese su correo" required>
             <i class="fa-solid fa-user"></i>
         </div>
         
