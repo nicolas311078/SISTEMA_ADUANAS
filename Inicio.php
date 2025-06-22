@@ -75,7 +75,7 @@
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(30, 60, 114, 0.15);
             width: 100%;
-            max-width: 600px;
+            max-width: 800px;
             border: 2px solid #2a5298;
             text-align: center;
         }
@@ -109,7 +109,7 @@
 
         .services-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             margin-bottom: 40px;
         }
@@ -305,6 +305,12 @@
                 <span class="service-icon">🐕</span>
                 <div class="service-title">Declarar Mascotas</div>
                 <div class="service-description">Registra el ingreso o salida de mascotas del país</div>
+            </a>
+
+            <a href="Registro_auto.php" class="service-card">
+                <span class="service-icon">🚗</span>
+                <div class="service-title">Registrar Vehículo</div>
+                <div class="service-description">Sistema de gestión y registro de vehículos aduaneros</div>
             </a>
         </div>
 
