@@ -20,8 +20,6 @@
             padding: 20px;
             position: relative;
         }
-
-        /* Logo en esquina superior izquierda */
         .logo-top-left {
             position: fixed;
             top: 20px;

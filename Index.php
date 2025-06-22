@@ -14,23 +14,17 @@
     <form action="IniciarSesion.php" method="POST">
         <h1>INICIAR SESIÓN</h1>
         <hr>
-        
-        <!-- Campo Usuario -->
         <div class="input-group">
             <label>Correo electrónico</label>
             <input type="text" name="Correo" placeholder="Ingrese su correo" required>
             <i class="fa-solid fa-user"></i>
         </div>
-        
-        <!-- Campo Clave -->
         <div class="input-group">
             <label>Clave</label>
             <input type="password" name="Clave" placeholder="Clave" required>
             <i class="fa-solid fa-unlock"></i>
         </div>
         <hr>
-        
-        <!-- Contenedor de botones -->
         <div class="button-group">
             <button type="submit">Iniciar sesión</button>
             <a href="registro.php" class="btn-registro">Registrarse</a>
