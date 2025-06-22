@@ -10,8 +10,25 @@
         <title>Tramites y Permisos De Menores</title>
         
         <style>
-            /* ELIMINÉ LOS ESTILOS CONFLICTIVOS */
-            /* Ahora solo estilos específicos para la lista que no están en style.css */
+            /* Logo en esquina superior izquierda */
+            .logo-top-left {
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                z-index: 1000;
+            }
+
+            .logo-top-left img {
+                max-width: 80px;
+                height: auto;
+                border-radius: 8px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+
+            body {
+                padding-top: 120px;
+            }
+
             .list-group-item {
                 background-color: #fff;
                 color: #1a4d8f;
@@ -54,10 +71,23 @@
                 color: white;
                 margin-bottom: 12px;
             }
+
+            @media (max-width: 480px) {
+                .logo-top-left img {
+                    max-width: 60px;
+                }
+            }
         </style>
     </head>
 
     <body>
+        <!-- Logo en esquina superior izquierda -->
+        <div class="logo-top-left">
+            <img src="https://via.placeholder.com/100x100/1a4d8f/ffffff?text=LOGO" 
+                 alt="Logo" 
+                 onerror="this.style.display='none'">
+        </div>
+
         <div class="container">
             <div class="info-card">
                 <h1><i class="fas fa-file-alt"></i> Trámites y Permisos para Menores</h1>

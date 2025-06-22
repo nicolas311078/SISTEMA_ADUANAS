@@ -36,6 +36,22 @@
           align-items: center;
           min-height: 100vh;
           padding: 20px;
+          position: relative;
+        }
+
+        /* Logo en esquina superior izquierda */
+        .logo-top-left {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+
+        .logo-top-left img {
+            max-width: 80px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         form {
@@ -209,20 +225,24 @@
           button, .btn-registro {
             width: 100%;
           }
+
+          .logo-top-left img {
+            max-width: 60px;
+          }
         }
     </style>
 </head>  
 <body>
+    <!-- Logo en esquina superior izquierda -->
+    <div class="logo-top-left">
+        <img src="https://via.placeholder.com/100x100/1a4d8f/ffffff?text=LOGO" 
+             alt="Logo" 
+             onerror="this.style.display='none'">
+    </div>
+
     <form action="IniciarSesion.php" method="POST">
         <h1>INICIAR SESIÓN</h1>
         <hr>
-        
-        <!-- Mostrar errores -->
-        <?php if(isset($_GET['error'])): ?>
-            <p class="error">
-                <?= htmlspecialchars($_GET['error']) ?>
-            </p> 
-        <?php endif; ?>
         
         <!-- Campo Usuario -->
         <div class="input-group">
@@ -242,9 +262,7 @@
         <!-- Contenedor de botones -->
         <div class="button-group">
             <button type="submit">Iniciar sesión</button>
-            <!-- Versión corregida -->
-<a href="registro.php" class="btn-registro">Registrarse</a>
-
+            <a href="registro.php" class="btn-registro">Registrarse</a>
         </div>
     </form>
 </body>

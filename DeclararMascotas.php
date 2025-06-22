@@ -18,6 +18,22 @@
             align-items: center;
             justify-content: center;
             padding: 20px;
+            position: relative;
+        }
+
+        /* Logo en esquina superior izquierda */
+        .logo-top-left {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+
+        .logo-top-left img {
+            max-width: 80px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         .container {
@@ -123,10 +139,21 @@
             h2 {
                 font-size: 24px;
             }
+
+            .logo-top-left img {
+                max-width: 60px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Logo en esquina superior izquierda -->
+    <div class="logo-top-left">
+        <img src="https://via.placeholder.com/100x100/2a5298/ffffff?text=LOGO" 
+             alt="Logo" 
+             onerror="this.style.display='none'">
+    </div>
+
     <div class="container">
         <h2>Declarar Mascotas</h2>
 
@@ -144,59 +171,4 @@
                     <option value="gato">Gato</option>
                     <option value="ave">Ave</option>
                     <option value="conejo">Conejo</option>
-                    <option value="hamster">Hámster</option>
-                    <option value="otro">Otro</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="raza">Raza:</label>
-                <input type="text" id="raza" name="raza" placeholder="Ej: Labrador, Persa, etc." required>
-            </div>
-
-            <div class="form-group">
-                <label for="edad">Edad (años):</label>
-                <input type="number" id="edad" name="edad" min="0" max="30" required>
-            </div>
-
-            <div class="form-group">
-                <label for="sexo">Sexo:</label>
-                <select id="sexo" name="sexo" required>
-                    <option value="">Seleccione el sexo</option>
-                    <option value="macho">Macho</option>
-                    <option value="hembra">Hembra</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="color">Color:</label>
-                <input type="text" id="color" name="color" placeholder="Ej: Negro, Blanco, Café, etc." required>
-            </div>
-
-            <div class="form-group">
-                <label for="fecha_nacimiento">Fecha de Nacimiento (aproximada):</label>
-                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
-            </div>
-
-            <div class="form-group">
-                <label for="vacunado">¿Está vacunado?:</label>
-                <select id="vacunado" name="vacunado" required>
-                    <option value="">Seleccione una opción</option>
-                    <option value="si">Sí</option>
-                    <option value="no">No</option>
-                    <option value="parcial">Parcialmente</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="observaciones">Observaciones:</label>
-                <input type="text" id="observaciones" name="observaciones" placeholder="Información adicional (opcional)">
-            </div>
-
-            <button type="submit" name="declarar">Declarar Mascota</button>
-        </form>
-
-        <p class="back-link"><a href="index.php">Volver al Inicio</a></p>
-    </div>
-</body>
-</html>
+                    

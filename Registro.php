@@ -18,6 +18,22 @@
             align-items: center;
             justify-content: center;
             padding: 20px;
+            position: relative;
+        }
+
+        /* Logo en esquina superior izquierda */
+        .logo-top-left {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+
+        .logo-top-left img {
+            max-width: 80px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         .container {
@@ -40,44 +56,6 @@
             max-width: 200px;
             height: auto;
             margin-bottom: 15px;
-        }
-
-        /* Logo en esquina superior - descomenta para usar */
-        
-        .logo-container {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 10;
-        }
-
-        .logo {
-            max-width: 80px;
-            height: auto;
-            margin-bottom: 0;
-        }
-        */
-
-        /* Logo en esquina superior del formulario - alternativa */
-        
-        .container {
-            position: relative;
-        }
-
-        .logo-container {
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            background: white;
-            padding: 10px;
-            border-radius: 50%;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .logo {
-            max-width: 60px;
-            height: auto;
-            margin-bottom: 0;
         }
 
         h2 {
@@ -178,7 +156,7 @@
             border-left: 4px solid #2e7d32;
         }
 
-            @media (max-width: 480px) {
+        @media (max-width: 480px) {
             .container {
                 padding: 30px 20px;
                 margin: 10px;
@@ -189,19 +167,20 @@
             }
 
             /* Logo más pequeño en móvil */
-            .logo-container {
-                top: 10px;
-                left: 10px;
-                padding: 8px;
-            }
-
-            .logo {
-                max-width: 80px;
+            .logo-top-left img {
+                max-width: 60px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Logo en esquina superior izquierda -->
+    <div class="logo-top-left">
+        <img src="https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=100068943858647" 
+             alt="Logo" 
+             onerror="this.style.display='none'">
+    </div>
+
     <div class="container">
         <div class="logo-container">
             <!-- Logo oficial del Servicio Nacional de Aduanas -->
@@ -212,14 +191,6 @@
         </div>
 
         <h2>Registro de Usuario</h2>
-
-        <?php if (isset($_GET['error'])): ?>
-            <p class="error"><?= htmlspecialchars($_GET['error']) ?></p>
-        <?php endif; ?>
-
-        <?php if (isset($_GET['success'])): ?>
-            <p class="success"><?= htmlspecialchars($_GET['success']) ?></p>
-        <?php endif; ?>
 
         <form action="Registro_Usuario.php" method="POST">
             <div class="form-group">
