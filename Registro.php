@@ -18,6 +18,22 @@
             align-items: center;
             justify-content: center;
             padding: 20px;
+            position: relative;
+        }
+
+        /* Logo en esquina superior izquierda */
+        .logo-top-left {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+
+        .logo-top-left img {
+            max-width: 80px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         .container {
@@ -28,6 +44,18 @@
             width: 100%;
             max-width: 450px;
             border: 2px solid #2a5298;
+        }
+
+        /* Logo centrado (opción actual) */
+        .logo-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 15px;
         }
 
         h2 {
@@ -137,20 +165,32 @@
             h2 {
                 font-size: 24px;
             }
+
+            /* Logo más pequeño en móvil */
+            .logo-top-left img {
+                max-width: 60px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Logo en esquina superior izquierda -->
+    <div class="logo-top-left">
+        <img src="https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=100068943858647" 
+             alt="Logo" 
+             onerror="this.style.display='none'">
+    </div>
+
     <div class="container">
+        <div class="logo-container">
+            <!-- Logo oficial del Servicio Nacional de Aduanas -->
+            <img src="https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=100068943858647" 
+                 alt="Servicio Nacional de Aduanas - Chile" 
+                 class="logo"
+                 onerror="this.style.display='none'">
+        </div>
+
         <h2>Registro de Usuario</h2>
-
-        <?php if (isset($_GET['error'])): ?>
-            <p class="error"><?= htmlspecialchars($_GET['error']) ?></p>
-        <?php endif; ?>
-
-        <?php if (isset($_GET['success'])): ?>
-            <p class="success"><?= htmlspecialchars($_GET['success']) ?></p>
-        <?php endif; ?>
 
         <form action="Registro_Usuario.php" method="POST">
             <div class="form-group">
@@ -181,7 +221,7 @@
             <div class="form-group">
                 <label for="Telefono">Número de Teléfono:</label>
                 <input type="tel" id="Telefono" name="Telefono" placeholder="+56 9 1234 5678" required>
-                </div>
+            </div>
 
             <button type="submit" name="registrar">Registrarse</button>
         </form>
