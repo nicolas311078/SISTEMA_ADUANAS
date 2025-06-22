@@ -173,6 +173,9 @@
         }
     </style>
 </head>
+</script>
+</body>
+</html>
 <body>
     <!-- Logo en esquina superior izquierda -->
     <div class="logo-top-left">
