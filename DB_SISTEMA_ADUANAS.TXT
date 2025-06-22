@@ -17,7 +17,26 @@ CREATE TABLE usuarios (
     TokenRecuperacion VARCHAR(255) NULL,
     TokenExpiracion DATETIME NULL,
     
-    -- Índices para mejorar el rendimiento
+CREATE TABLE mascotas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_mascota VARCHAR(100) NOT NULL,
+    especie ENUM('Perro', 'Gato', 'Ave', 'Conejo', 'Hamster', 'Otro') NOT NULL,
+    raza VARCHAR(100) NOT NULL,
+    sexo ENUM('Macho', 'Hembra') NOT NULL,
+    edad DECIMAL(3,1) NOT NULL CHECK (edad >= 0 AND edad <= 30),
+    peso DECIMAL(5,1) NOT NULL CHECK (peso >= 0.1 AND peso <= 100),
+    color_descripcion VARCHAR(200) NOT NULL,
+    numero_microchip VARCHAR(50) DEFAULT NULL,
+    fecha_declaracion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    estado ENUM('Activa', 'Inactiva', 'Pendiente') DEFAULT 'Activa',
+
+    -- Índices para mejorar rendimiento
+    INDEX idx_especie (especie),
+    INDEX idx_fecha_declaracion (fecha_declaracion),
+    INDEX idx_microchip (numero_microchip),
+    INDEX idx_estado (estado)
+);    
     UNIQUE INDEX idx_rut (Rut),
     UNIQUE INDEX idx_correo (Correo),
     INDEX idx_apellidos (Apellidos),
