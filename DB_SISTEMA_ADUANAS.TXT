@@ -37,6 +37,28 @@ CREATE TABLE IF NOT EXISTS mascotas (
     INDEX idx_especie (especie),
     INDEX idx_fecha_registro (fecha_registro)
 );
+CREATE TABLE autos (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    marca VARCHAR(50) NOT NULL,
+    modelo VARCHAR(100) NOT NULL,
+    año INT(4) NOT NULL,
+    color VARCHAR(30) NOT NULL,
+    patente VARCHAR(10) NOT NULL UNIQUE,
+    numero_chasis VARCHAR(50) NOT NULL UNIQUE,
+    numero_motor VARCHAR(50) NOT NULL,
+    cilindrada INT(6) NOT NULL,
+    combustible ENUM('Gasolina', 'Diesel', 'Híbrido', 'Eléctrico', 'GLP', 'GNC') NOT NULL,
+    propietario VARCHAR(100) NOT NULL,
+    rut_propietario VARCHAR(12) NOT NULL,
+    estado ENUM('Activo', 'Inactivo') DEFAULT 'Activo',
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (id),
+    INDEX idx_patente (patente),
+    INDEX idx_propietario (propietario),
+    INDEX idx_marca_modelo (marca, modelo),
+    INDEX idx_estado (estado)
+);
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
